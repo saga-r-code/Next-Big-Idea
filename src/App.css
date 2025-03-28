@@ -1,0 +1,20 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: all;
+}
+
+@layer components {
+  .header-style {
+    @apply mb-20 mx-4 p-5    px-5 md:p-8 lg:p-10 md:mb-0 shadow shadow-slate-500  rounded-full  sm:flex flex-col sm:flex-row justify-start gap-5 sm:justify-between items-start sm:items-center
+  }
+  .for-animation{
+    @apply transition-all duration-300
+  }
+}
+
+
+body {
+  background-color: #1d232a;
+  width: 100%;
+  height: 100vh;
+}

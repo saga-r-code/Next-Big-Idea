@@ -42,8 +42,9 @@ const NewIdeaForm = () => {
   };
 
   useEffect(() => {
-    if (localStorage.getItem("username")) {
-      setUsername(localStorage.getItem("username"));
+    const storedUsername = localStorage.getItem("username");
+    if (storedUsername) {
+      setUsername(storedUsername);
       setExistingUser(true);
     }
   }, []);
@@ -80,36 +81,34 @@ const NewIdeaForm = () => {
             className="textarea textarea-bordered h-24 w-full focus:outline-none hover:border hover:border-slate-400 for-animation outline-slate-500 p-3"
           ></textarea>
         </div>
-        {existingUser && (
-          <div className="flex flex-col justify-center mb-4">
-            <label
-              htmlFor="name"
-              className="flex justify-between items-center mb-2 font-semibold text-sm sm:text-lg"
-            >
-              <p>Your Username</p>
-              <p className="text-xs sm:text-sm italic text-gray-500 hover:text-slate-300 for-animation font-normal flex items-center gap-2">
-                No Account Required <Info size={18} />
-              </p>
-            </label>
-            <input
-              required
-              type="text"
-              value={username}
-              id="username"
-              name="username"
-              placeholder="John Doe"
-              onChange={(e) => setUsername(e.target.value)}
-              className="input input-bordered w-full p-3 hover:border hover:border-slate-400 for-animation"
-            />
-          </div>
-        )}
+        <div className="flex flex-col justify-center mb-4">
+          <label
+            htmlFor="name"
+            className="flex justify-between items-center mb-2 font-semibold text-sm sm:text-lg"
+          >
+            <p>Your Username</p>
+            <p className="text-xs sm:text-sm italic text-gray-500 hover:text-slate-300 for-animation font-normal flex items-center gap-2">
+              No Account Required <Info size={18} />
+            </p>
+          </label>
+          <input
+            required
+            type="text"
+            value={username}
+            id="username"
+            name="username"
+            placeholder="John Doe"
+            onChange={(e) => setUsername(e.target.value)}
+            className="input input-bordered w-full p-3 hover:border hover:border-slate-400 for-animation"
+          />
+        </div>
 
         <button
           type="submit"
           disabled={!(idea && username)}
           className="btn btn-accent  rounded-full w-full py-5 text-base font-semibold"
         >
-          {!isLoading ? (
+          {isLoading ? (
             <Loading />
           ) : (
             <p className="flex items-center gap-2">
@@ -124,3 +123,4 @@ const NewIdeaForm = () => {
 };
 
 export default NewIdeaForm;
+

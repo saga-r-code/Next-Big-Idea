@@ -10,6 +10,9 @@
   .for-animation{
     @apply transition-all duration-300
   }
+  .text-gradient{
+    @apply bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent
+  }
 }
 
 

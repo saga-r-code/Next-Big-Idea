@@ -11,10 +11,11 @@ const AddNewScreen = () => {
   };
 
   return (
-    <div>
+    <div className="h-screen">
       <div className="header-style">
         <Header />
       </div>
+
       <button
         onClick={handleBackToHome}
         className="m-10 btn  btn-accent rounded-full   "
@@ -22,7 +23,7 @@ const AddNewScreen = () => {
         {`🏠  Back to Home`}
       </button>
 
-      <div className="flex flex-col justify-center items-center gap-10">
+      <div className="flex flex-col justify-center items-center gap-10 px-3 sm:px-10 md:px-0">
         <h2 className="text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-medium mt-4">
           Just jot down your ideas below!
         </h2>

@@ -16,12 +16,13 @@ const router = createBrowserRouter([
   },
 ]);
 
+
 function App() {
   const [theme, setTheme] = useState("dark");
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       <div data-theme={theme}>
-        <div className="h-dvh xl:w-[80%] mx-auto py-10">
+        <div className="h-auto xl:w-[80%] mx-auto py-10">
           <RouterProvider router={router} />
         </div>
       </div>

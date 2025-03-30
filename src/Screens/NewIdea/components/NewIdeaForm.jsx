@@ -9,7 +9,7 @@ const NewIdeaForm = () => {
   const [username, setUsername] = useState("");
   const [showText, setShowText] = useState(false);
   const [existingUser, setExistingUser] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent page reload
@@ -108,14 +108,14 @@ const NewIdeaForm = () => {
           disabled={!(idea && username)}
           className="btn btn-accent  rounded-full w-full py-5 text-base font-semibold"
         >
-          {isLoading ? (
+          {/* {isLoading ? (
             <Loading />
-          ) : (
-            <p className="flex items-center gap-2">
-              {" "}
-              Create Idea <Send size={20} />
-            </p>
-          )}
+          ) : ( */}
+          <p className="flex items-center gap-2">
+            {" "}
+            Create Idea <Send size={20} />
+          </p>
+          {/* )} */}
         </button>
       </form>
     </>
@@ -123,4 +123,3 @@ const NewIdeaForm = () => {
 };
 
 export default NewIdeaForm;
-

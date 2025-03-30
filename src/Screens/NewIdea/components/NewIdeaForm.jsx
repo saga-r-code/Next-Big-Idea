@@ -13,7 +13,6 @@ const NewIdeaForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent page reload
-    setIsLoading(false);
 
     try {
       const result = await db
@@ -32,7 +31,6 @@ const NewIdeaForm = () => {
           setShowText(false);
         }, 2000);
         setIdea("");
-        setIsLoading(true);
         navigate("/"); // go to homepage after submission
       } else {
         console.log("Insert Failed");

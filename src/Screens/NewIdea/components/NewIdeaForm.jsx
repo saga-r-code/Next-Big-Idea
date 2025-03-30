@@ -2,14 +2,14 @@ import { Info, Send } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { db } from "../../../db";
 import { Ideas } from "../../../db/schema";
-import Loading from "../../../Loading";
+import { useNavigate } from "react-router-dom";
 
 const NewIdeaForm = () => {
   const [idea, setIdea] = useState("");
   const [username, setUsername] = useState("");
   const [showText, setShowText] = useState(false);
   const [existingUser, setExistingUser] = useState(false);
-  // const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent page reload
@@ -33,6 +33,7 @@ const NewIdeaForm = () => {
         }, 2000);
         setIdea("");
         setIsLoading(true);
+        navigate("/"); // go to homepage after submission
       } else {
         console.log("Insert Failed");
       }
@@ -108,14 +109,10 @@ const NewIdeaForm = () => {
           disabled={!(idea && username)}
           className="btn btn-accent  rounded-full w-full py-5 text-base font-semibold"
         >
-          {/* {isLoading ? (
-            <Loading />
-          ) : ( */}
           <p className="flex items-center gap-2">
             {" "}
             Create Idea <Send size={20} />
           </p>
-          {/* )} */}
         </button>
       </form>
     </>
@@ -123,3 +120,4 @@ const NewIdeaForm = () => {
 };
 
 export default NewIdeaForm;
+

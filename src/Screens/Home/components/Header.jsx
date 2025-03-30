@@ -10,8 +10,8 @@ const Header = () => {
   return (
     <>
       <div className="flex flex-col  gap-1 ">
-        <h2 className="text-2xl inline-flex gap-2 md:text-3xl font-bold text-nowrap ">
-          <p className="text-gradient"> Next Big Idea</p> 🚀💡
+        <h2 className="text-xl sm:text-2xl inline-flex gap-2 md:text-3xl font-bold text-nowrap ">
+          <p className="text-gradient"> Next Big Idea One</p> 🚀💡
         </h2>
         <h2 className=" text-sm  font-bold ">
           Made By{" "}

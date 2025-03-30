@@ -38,13 +38,10 @@ export const handleDislikeVote = (id) => {
 
 export const handleCheckIsAlreadyLike = (id) => {
   const votes = JSON.parse(localStorage.getItem("votes"));
-  if (!votes) return false;
-  return votes.voteForLike.includes(id);
+  return votes?.voteForLike?.includes(id);
 };
 
 export const handleCheckIsAlreadyDisLike = (id) => {
   const votes = JSON.parse(localStorage.getItem("votes"));
-  if (!votes) return false;
-  return votes.voteForDislike.includes(id);
+  return votes?.voteForDislike?.includes(id);
 };
-

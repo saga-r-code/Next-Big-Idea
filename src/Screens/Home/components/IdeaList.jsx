@@ -1,6 +1,6 @@
 import React from "react";
 import IdeaItem from "./IdeaItem";
-import Loading from "../../../Loading";
+import Loading from "../../../components/Loading";
 
 const IdeaList = ({ ideaList, refreshData, isLoading }) => {
   const formatedDate = (getDate) => {
@@ -27,7 +27,6 @@ const IdeaList = ({ ideaList, refreshData, isLoading }) => {
       ) : (
         <Loading />
       )}
-     
     </div>
   );
 };

@@ -5,6 +5,8 @@ This project uses the following libraries:
 - DaisyUI
 - Lucide (for icons)
 - Vite (for development and build)# Next-Big-Idea
+- Postgresql
+- Neon DB
 
 ## Setup Drizzle Kit With Postgres Neon Database
 

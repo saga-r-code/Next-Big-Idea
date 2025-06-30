@@ -1,9 +1,13 @@
-import React, { useState } from "react";
-import { Calendar, Heart, ThumbsDown, ThumbsUp } from "lucide-react";
+import { Calendar, ThumbsDown, ThumbsUp } from "lucide-react";
 import { db } from "../../../db";
 import { Ideas } from "../../../db/schema";
 import { eq } from "drizzle-orm";
-import { handleCheckIsAlreadyDisLike, handleCheckIsAlreadyLike, handleDislikeVote, handleLikeVote } from "../../../Service";
+import {
+  handleCheckIsAlreadyDisLike,
+  handleCheckIsAlreadyLike,
+  handleDislikeVote,
+  handleLikeVote,
+} from "../../../Service";
 
 const IdeaItem = ({ idea, index, formatedDate, refreshData }) => {
   const handleLike = async () => {
@@ -71,21 +75,26 @@ const IdeaItem = ({ idea, index, formatedDate, refreshData }) => {
               {idea.username.toUpperCase().charAt(0) + idea.username.slice(1)}
             </p>
 
-            <div className="flex justify-center items-center gap-2 cursor-pointer">
-              <ThumbsUp
-                // size={20}
-                fill={`${handleCheckIsAlreadyLike(idea.id) ? "green" : "gray"}`}
-                strokeWidth={0}
-                onClick={() => handleLike()}
-                className="badge badge-soft hover:bg-slate-600 h-6 rounded-lg"
-              />
+            <div className="flex justify-center items-center gap-3 cursor-pointer">
+                <ThumbsUp
+                  // size={20}
+                  fill={`${
+                    handleCheckIsAlreadyLike(idea.id) ? "green" : "gray"
+                  }`}
+                  strokeWidth={0}
+                  onClick={() => handleLike()}
+                    className="h-6 w-6 "
+                />
               <p>{idea.vote}</p>
               <ThumbsDown
                 size={20}
-                fill={`${handleCheckIsAlreadyDisLike(idea.id) ? "red" : "gray"}`}
+                fill={`${
+                  handleCheckIsAlreadyDisLike(idea.id) ? "red" : "gray"
+                }`}
                 strokeWidth={0}
+                
                 onClick={() => handleDislike()}
-                className="badge badge-soft hover:bg-slate-600 h-6 rounded-lg"
+                className=" h-6 w-6"
               />
             </div>
           </div>

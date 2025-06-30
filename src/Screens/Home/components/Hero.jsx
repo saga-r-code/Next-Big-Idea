@@ -8,18 +8,11 @@ const Hero = () => {
       {/* Heading */}
       <div className="p-10 space-y-3 text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold ">
-          Your{" "}
-          <span className="text-gradient">
-            Big Idea
-          </span>{" "}
-          Begins Here
+          Your <span className="text-gradient">Big Idea</span> Begins Here
         </h1>
         <span className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold">
           Note your idea freely and begin creating the{" "}
-          <span className="text-gradient">
-            next big thing
-          </span>
-          .
+          <span className="text-gradient">next big thing</span>.
         </span>
       </div>
 
@@ -29,15 +22,12 @@ const Hero = () => {
           className="select select-bordered rounded-full w-full max-w-xs"
           onChange={(e) => setTheme(e.target.value)}
         >
-          <option disabled >
-            Select Theme
+          <option disabled>Select Theme</option>
+          <option value="light" defaultValue="light">
+            Light
           </option>
-          <option value="light" selected>Light</option>
           <option value="dark">Dark</option>
-          <option value="cupcake">Cupcake</option>
-          <option value="bumblebee">Bumblebee</option>
           <option value="caramellatte">Caramellatte</option>
-          <option value="corporate">Corporate</option>
           <option value="synthwave">Synthwave</option>
           <option value="retro">Retro</option>
           <option value="cyberpunk">Cyberpunk</option>
